@@ -74,7 +74,7 @@ router.post('/uploadpic/:id', upload.single('prfl'), function (req, res) {
 });
 
 router.get('/leaderboard',(req,res)=>{
-  UserModel.find().sort({amount:1})
+  UserModel.find().sort({amount:-1})
   .then(function(data){
     res.render('leaderboard',{data})
   })
@@ -87,3 +87,5 @@ router.get('/donorlist', function(req,res){
 })
 
 module.exports = router;
+
+
